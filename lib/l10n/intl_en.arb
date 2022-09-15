@@ -1,0 +1,8 @@
+{ "appName": "Synergy",
+  "headerTitle": "Regular payment",
+  "loginOrSignUp": "Login / Sign up",
+  "verifyMobileNumber": "Verify Mobile Number",
+  "mobileNumber": "Mobile Number",
+  "invalidOtp": "Invalid OTP",
+  "success": "Success"
+}

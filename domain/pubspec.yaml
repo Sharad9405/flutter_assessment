@@ -1,0 +1,24 @@
+name: domain
+description: A new Flutter project.
+version: 0.0.1
+homepage:
+publish_to: none
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  dartz: ^0.10.0
+  rxdart: ^0.27.2
+  riverpod: ^1.0.3
+  device_info: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:

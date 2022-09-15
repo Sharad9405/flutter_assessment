@@ -1,0 +1,85 @@
+name: synergy
+description: A new Flutter project.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+flutter_intl:
+  enabled: true
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  domain:
+    path: domain
+  data:
+    path: data
+
+  cupertino_icons: ^1.0.2
+  flutter_riverpod: ^1.0.4
+  dartz: ^0.10.1
+  rxdart: ^0.27.5
+  fluttertoast: ^8.0.8
+  responsive_builder: ^0.4.1
+  flutter_svg: ^1.1.5
+  responsive_framework: ^0.1.4
+  intl: 0.17.0
+  pin_code_fields: ^7.3.0
+  dotted_border: ^2.0.0+2
+  slide_to_act: ^2.0.1
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/svg/
+    - assets/png/
+
+  fonts:
+    - family: Gilroy
+      fonts:
+        - asset: assets/font/Gilroy-Regular.ttf
+          weight: 500
+    - family: Gilroy-Regular
+      fonts:
+        - asset: assets/font/Gilroy-Regular.ttf
+          weight: 400
+    - family: Gilroy-Medium
+      fonts:
+        - asset: assets/font/Gilroy-Medium.ttf
+          weight: 500
+    - family: Gilroy-Bold
+      fonts:
+        - asset: assets/font/Gilroy-Bold.ttf
+          weight: 700
+    - family: Gilroy-ExtraBold
+      fonts:
+        - asset: assets/font/Gilroy-ExtraBold.ttf
+          weight: 800
+    - family: Manrope-Regular
+      fonts:
+        - asset: assets/font/Manrope-Regular.ttf
+          weight: 400
+    - family: Manrope-Medium
+      fonts:
+        - asset: assets/font/Manrope-Medium.ttf
+          weight: 500
+    - family: Manrope-Bold
+      fonts:
+        - asset: assets/font/Manrope-Bold.ttf
+          weight: 700
