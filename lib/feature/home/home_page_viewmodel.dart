@@ -75,11 +75,6 @@ class HomePageViewModel extends BasePageViewModel {
         time: '1 week ago',
         amount: '+\$450',
       ));
-      list.add(Transaction(
-        name: 'Sharad',
-        time: '2 week ago',
-        amount: '+\$500',
-      ));
       _transactionList.safeAdd(list);
     });
   }

@@ -16,14 +16,17 @@ class CustomFloatingActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: SystemTheme.scale(width ?? 56),height: SystemTheme.scale(height ?? 56),
-      child: FittedBox(
-        child: FloatingActionButton(
-            backgroundColor: backgroundColor ?? AppColor.color2F2E41,
-            onPressed: () => onPressed?.call(),
-            clipBehavior: Clip.hardEdge,
-            child: ImageUtil.assetSvg(assetName: AssetUtils.iconSendMoney, color: childColor ?? AppColor.white)
+    return Container(
+      margin: EdgeInsets.only(bottom: SystemTheme.dp5),
+      child: SizedBox(
+        width: SystemTheme.scale(width ?? 56),height: SystemTheme.scale(height ?? 56),
+        child: FittedBox(
+          child: FloatingActionButton(
+              backgroundColor: backgroundColor ?? AppColor.color2F2E41,
+              onPressed: () => onPressed?.call(),
+              clipBehavior: Clip.hardEdge,
+              child: ImageUtil.assetSvg(assetName: AssetUtils.iconSendMoney, color: childColor ?? AppColor.white)
+          ),
         ),
       ),
     );

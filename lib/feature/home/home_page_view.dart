@@ -28,48 +28,38 @@ class HomePageView extends BasePageViewWidget<HomePageViewModel> {
         primary: true,
         physics: const ClampingScrollPhysics(),
         child: SizedBox(
-          width: UIUtils.width(context),
-          height: UIUtils.height(context),
-          child: Stack(
+          width: SystemTheme.width,
+          height: SystemTheme.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Positioned.fill(
-                left: 0,top: 0,right: 0,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const BalanceCard(),
+              const BalanceCard(),
 
-                    AppStreamBuilder<List<OperationType>>(
-                        initialData: const [],
-                        stream: model.operationTypeStream,
-                        dataBuilder: (context, data) {
-                          return SendMoneyExchangeSetupPaymentView(
-                            operationType: data, onCardClick: (OptType operationType) {
-                            model.updateOperationType(context, operationType);
-                          },);
-                        }
-                    ),
-
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: SystemTheme.scale(20)),
-                      child: const ShowMoreWidget(),
-                    ),
-
-                    Expanded(
-                      child: AppStreamBuilder<List<Transaction>>(
-                          initialData: const [],
-                          stream: model.transactionList,
-                          dataBuilder: (context, data) {
-                            return  TransactionListView(transactionList: data,);
-                          }
-                      ),
-                    ),
-                  ],
-                ),
+              AppStreamBuilder<List<OperationType>>(
+                  initialData: const [],
+                  stream: model.operationTypeStream,
+                  dataBuilder: (context, data) {
+                    return SendMoneyExchangeSetupPaymentView(
+                      operationType: data, onCardClick: (OptType operationType) {
+                      model.updateOperationType(context, operationType);
+                    },);
+                  }
               ),
 
-              Positioned(
-                left: 0,bottom: 0,right: 0, child: Container() ,
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: SystemTheme.scale(20)),
+                child: const ShowMoreWidget(),
+              ),
+
+              Expanded(
+                child: AppStreamBuilder<List<Transaction>>(
+                    initialData: const [],
+                    stream: model.transactionList,
+                    dataBuilder: (context, data) {
+                      return  TransactionListView(transactionList: data,);
+                    }
+                ),
               ),
             ],
           ),

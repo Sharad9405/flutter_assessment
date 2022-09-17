@@ -71,6 +71,7 @@ class SystemTheme {
   // Spacing
   static double dp2 = scale(2);
   static double dp4 = scale(4);
+  static double dp5 = scale(5);
   static double dp8 = scale(8);
   static double dp6 = scale(6);
   static double dp12 = scale(12);
