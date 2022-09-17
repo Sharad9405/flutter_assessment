@@ -1,4 +1,5 @@
 import 'package:domain/constants/enum/text_variant.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:synergy/base/base_page.dart';
 import 'package:synergy/feature/schedule/schedule_page_viewmodel.dart';
 import 'package:synergy/main/navigation/route_paths.dart';
@@ -72,19 +73,26 @@ class SchedulePageView extends BasePageViewWidget<SchedulePageViewModel> {
                          font: FontEnum.GMedium.toString(),
                          textColor: AppColor.lightGrey2,
                        ),
-                       Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                         children: [
-                           AppText(title: '4 August 2021',
-                             fontSize: 16,
-                             font: FontEnum.GMedium.toString(),
-                             pTop: SystemTheme.scale(7), mBottom: SystemTheme.scale(10),
-                             textColor: AppColor.subHeader,
-                           ),
-                           ImageUtil.assetSvg(assetName: AssetUtils.iconCalendar, width: SystemTheme.scale(15),
-                               height: SystemTheme.scale(15.35), fit: BoxFit.cover)
-                         ],
+                       CupertinoButton(
+                         onPressed: () {
+                           _openDatePicker(context);
+                         },
+                         padding: const EdgeInsets.all(0),
+                         child: Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           children: [
+                             AppText(title: '4 August 2021',
+                               fontSize: 16,
+                               font: FontEnum.GMedium.toString(),
+                               pTop: SystemTheme.scale(7), mBottom: SystemTheme.scale(10),
+                               textColor: AppColor.subHeader,
+                             ),
+                             ImageUtil.assetSvg(assetName: AssetUtils.iconCalendar, width: SystemTheme.scale(15),
+                                 height: SystemTheme.scale(15.35), fit: BoxFit.cover)
+                           ],
+                         ),
                        ),
+
                        CustomDivider(pTop: 5,width: SystemTheme.width, height: SystemTheme.scale(0.5),color: AppColor.colorE8E9F3),
                        AppText(title: 'Payment Frequency',
                          fontSize: 14,
@@ -247,18 +255,24 @@ class SchedulePageView extends BasePageViewWidget<SchedulePageViewModel> {
                            ],
                          ),
                        ),
-                       Row(
-                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                         children: [
-                           AppText(title: '4 August 2021',
-                             fontSize: 16,
-                             font: FontEnum.GMedium.toString(),
-                             pTop: SystemTheme.scale(16), mBottom: SystemTheme.scale(10),
-                             textColor: AppColor.subHeader,
-                           ),
-                           ImageUtil.assetSvg(assetName: AssetUtils.iconCalendar, width: SystemTheme.scale(15),
-                               height: SystemTheme.scale(15.35), fit: BoxFit.cover)
-                         ],
+                       CupertinoButton(
+                         onPressed: () {
+                           _openDatePicker(context);
+                         },
+                         padding: const EdgeInsets.all(0),
+                         child: Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           children: [
+                             AppText(title: '4 August 2021',
+                               fontSize: 16,
+                               font: FontEnum.GMedium.toString(),
+                               pTop: SystemTheme.scale(16), mBottom: SystemTheme.scale(10),
+                               textColor: AppColor.subHeader,
+                             ),
+                             ImageUtil.assetSvg(assetName: AssetUtils.iconCalendar, width: SystemTheme.scale(15),
+                                 height: SystemTheme.scale(15.35), fit: BoxFit.cover)
+                           ],
+                         ),
                        ),
                        CustomDivider(pTop: 5,width: SystemTheme.width, height: SystemTheme.scale(0.5),color: AppColor.colorE8E9F3),
                        AppText(title: 'Description',
@@ -282,32 +296,31 @@ class SchedulePageView extends BasePageViewWidget<SchedulePageViewModel> {
             ),
           ),
 
-          InkWell(
-            onTap:() {
-              showSynergyDatePicker(
-                context: context,
-                confirmText: 'Save',
-                cancelText: 'Cancel',
-                initialDate: DateTime.now(),
-                lastDate: DateTime.now(),
-                firstDate: DateTime(1900),
-              );
+          SwipeButton(
+            key: model.sliderKey,
+            text: "Swipe To Schedule",
+            height: 50,
+            width: UIUtils.width(context),
+            textColor: AppColor.white,
+            fontSize: 15, letterSpacing: 2,
+            onSubmit: () {
+              model.sliderKey.currentState?.reset();
+              Navigator.pushNamed(context, RoutePaths.verifyOtp);
             },
-            child: SwipeButton(
-              key: model.sliderKey,
-              text: "Swipe To Schedule",
-              height: 50,
-              width: UIUtils.width(context),
-              textColor: AppColor.white,
-              fontSize: 15, letterSpacing: 2,
-              onSubmit: () {
-                model.sliderKey.currentState?.reset();
-                Navigator.pushNamed(context, RoutePaths.verifyOtp);
-              },
-            ),
           ),
         ],
       ),
+    );
+  }
+
+  _openDatePicker(context){
+    showSynergyDatePicker(
+      context: context,
+      confirmText: 'Save',
+      cancelText: 'Cancel',
+      initialDate: DateTime.now(),
+      lastDate: DateTime.now(),
+      firstDate: DateTime(1900),
     );
   }
 }
