@@ -1,4 +1,5 @@
 import 'package:domain/constants/enum/text_variant.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:synergy/utils/img_util.dart';
 import 'package:synergy/ui/molecules/app_text.dart';
@@ -65,10 +66,13 @@ class Header extends StatelessWidget with PreferredSizeWidget {
             ),
             Positioned(
               left: 0, top: 0,bottom: 0,
-              child: ImageUtil.assetSvg(assetName: leadingIcon,
-                  fit: BoxFit.cover,
-                  height: SystemTheme.scale(12.59),width: SystemTheme.scale(6),
-                  onClick: () => onLeadingClick?.call()),
+              child: CupertinoButton(
+                onPressed: () => onLeadingClick?.call(),
+                padding: EdgeInsets.zero,
+                child: ImageUtil.assetSvg(assetName: leadingIcon,
+                    fit: BoxFit.cover,
+                    height: SystemTheme.scale(12.59),width: SystemTheme.scale(6)),
+              ),
             ),
 
             if(showSuffix)

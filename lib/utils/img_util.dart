@@ -18,7 +18,6 @@ class ImageUtil {
       alignment = Alignment.center,
       BlendMode colorBlendMode = BlendMode.srcIn,
       String? semanticsLabel,
-      Function()? onClick,
       }) {
 
   /*
@@ -40,25 +39,21 @@ class ImageUtil {
     }
 
     */
-    return CupertinoButton(
-      onPressed:() => onClick?.call(),
-      padding: EdgeInsets.zero,
-      child: Consumer(
-        builder: (context, ref, child) => SvgPicture.asset(
-          darkAssetName != null
-              ? (ref.watch(appViewModel).appTheme == AppTheme.dark
-              ? darkAssetName
-              : assetName)
-              : assetName,
-          width: width,
-          matchTextDirection: true,
-          height: height,
-          fit: BoxFit.fill,
-          color: color,
-          alignment: alignment,
-          colorBlendMode: colorBlendMode,
-          semanticsLabel: semanticsLabel,
-        ),
+    return Consumer(
+      builder: (context, ref, child) => SvgPicture.asset(
+        darkAssetName != null
+            ? (ref.watch(appViewModel).appTheme == AppTheme.dark
+            ? darkAssetName
+            : assetName)
+            : assetName,
+        width: width,
+        matchTextDirection: true,
+        height: height,
+        fit: BoxFit.fill,
+        color: color,
+        alignment: alignment,
+        colorBlendMode: colorBlendMode,
+        semanticsLabel: semanticsLabel,
       ),
     );
   }
