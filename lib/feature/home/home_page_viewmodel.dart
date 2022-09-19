@@ -63,7 +63,7 @@ class HomePageViewModel extends BasePageViewModel {
   }
 
   void _generateTransactions() {
-    Future.delayed(const Duration(milliseconds: 1000), () {
+    Future.delayed(const Duration(milliseconds: 250), () {
       List<Transaction> list = [];
       list.add(Transaction(
         name: 'Mike Rine',
