@@ -17,17 +17,17 @@ class Footer extends StatelessWidget {
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
       child: SizedBox(
-        height: SystemTheme.scale(height ?? 70),
+        height: SystemTheme.verticalScale(height ?? 70),
         child: Padding(
           padding:  EdgeInsets.only(top:SystemTheme.scale(10)),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                GestureDetector(onTap: () => onPressed?.call(0),child: ImageUtil.assetSvg(assetName: AssetUtils.iconHome)),
-                GestureDetector(onTap: () => onPressed?.call(1),child: ImageUtil.assetSvg(assetName: AssetUtils.iconWallet)),
-                GestureDetector(onTap: () => onPressed?.call(2),child: ImageUtil.assetSvg(assetName: AssetUtils.iconGroup)),
-                GestureDetector(onTap: () => onPressed?.call(3),child: ImageUtil.assetSvg(assetName: AssetUtils.iconSetting)),
+                Expanded(child: GestureDetector(onTap: () => onPressed?.call(0),child: ImageUtil.assetSvg(assetName: AssetUtils.iconHome))),
+                Expanded(child: GestureDetector(onTap: () => onPressed?.call(1),child: ImageUtil.assetSvg(assetName: AssetUtils.iconWallet))),
+                Expanded(child: GestureDetector(onTap: () => onPressed?.call(2),child: ImageUtil.assetSvg(assetName: AssetUtils.iconGroup))),
+                Expanded(child: GestureDetector(onTap: () => onPressed?.call(3),child: ImageUtil.assetSvg(assetName: AssetUtils.iconSetting))),
               ]),
         ),
       ),

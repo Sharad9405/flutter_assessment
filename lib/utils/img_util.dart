@@ -20,6 +20,8 @@ class ImageUtil {
       String? semanticsLabel,
       Function()? onClick,
       }) {
+
+  /*
     if (kIsWeb) {
       return Consumer(
         builder: (context, ref, child) => Image.network(
@@ -36,6 +38,8 @@ class ImageUtil {
         ),
       );
     }
+
+    */
     return CupertinoButton(
       onPressed:() => onClick?.call(),
       padding: EdgeInsets.zero,

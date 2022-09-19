@@ -51,11 +51,14 @@ class SystemTheme {
   ///The distance from the bottom edge to the first unpadded pixel,
   ///in physical pixels.
   double get bottomBarHeight => ui.window.padding.bottom;
-  static double guidelineBaseWidth = 360;
-  static double guidelineBaseHeight = 640;
+  // static double guidelineBaseWidth = 360;
+  // static double guidelineBaseHeight = 640;
+  static double guidelineBaseWidth = width;
+  static double guidelineBaseHeight = height;
   static double screenWidth = width;
   static double screenHeight = height;
   static double statusBarHeight = statusBarHeight1;
+
   static double scale(double size) {
     return (screenWidth / guidelineBaseWidth) * size;
   }

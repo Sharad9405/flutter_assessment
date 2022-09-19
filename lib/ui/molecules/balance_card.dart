@@ -26,13 +26,14 @@ class BalanceCard extends StatelessWidget {
         ),
         Container(
           margin: EdgeInsets.symmetric(vertical: SystemTheme.scale(15)),
-          padding: EdgeInsets.symmetric(vertical: SystemTheme.scale(10), horizontal: SystemTheme.scale(24)),
+          padding: EdgeInsets.symmetric(vertical: SystemTheme.scale(14), horizontal: SystemTheme.scale(24.14)),
           width: SystemTheme.width,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(SystemTheme.scale(20)),
               color: Colors.white),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(
@@ -72,6 +73,7 @@ class BalanceCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
                 children: const [
                   CurrencyWidget(
                     imagePath: AssetUtils.flagOne,

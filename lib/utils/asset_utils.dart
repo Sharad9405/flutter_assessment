@@ -41,3 +41,7 @@ class AssetUtils {
   static const String iconMoreVer = "$png/icon_more_ver.png";
 
 }
+
+extension ForWeb on String {
+  String forWeb({required bool web}) => web ? replaceFirst('assets/','') : this;
+}

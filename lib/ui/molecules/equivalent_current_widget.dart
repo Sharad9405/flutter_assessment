@@ -17,7 +17,7 @@ class CurrencyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ImageUtil.assetSvg(assetName: imagePath, width: SystemTheme.scale(20), height: SystemTheme.scale(20), fit: BoxFit.cover),

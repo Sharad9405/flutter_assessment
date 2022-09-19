@@ -23,21 +23,22 @@ class SplashPageView extends BasePageViewWidget<SplashPageViewModel> {
       initialData: Resource.none(),
       stream: model.currentUser,
       onData: (data) async {
-        if (data.status == Status.SUCCESS) {
-          if (data.data?.isLoggedIn == true) {
-            Navigator.pushReplacementNamed(context, RoutePaths.home);
-          } else {
-            Navigator.pushReplacementNamed(context, RoutePaths.home);
-          }
-        } else if (data.status == Status.ERROR) {
-          switch (data.appError?.type) {
-            case ErrorType.DB_USER_NOT_FOUND:
-                Navigator.pushReplacementNamed(context, RoutePaths.home);
-              break;
-            default:
-              break;
-          }
-        }
+        Navigator.pushReplacementNamed(context, RoutePaths.home);
+        // if (data.status == Status.SUCCESS) {
+        //   if (data.data?.isLoggedIn == true) {
+        //     Navigator.pushReplacementNamed(context, RoutePaths.home);
+        //   } else {
+        //     Navigator.pushReplacementNamed(context, RoutePaths.home);
+        //   }
+        // } else if (data.status == Status.ERROR) {
+        //   switch (data.appError?.type) {
+        //     case ErrorType.DB_USER_NOT_FOUND:
+        //         Navigator.pushReplacementNamed(context, RoutePaths.home);
+        //       break;
+        //     default:
+        //       break;
+        //   }
+        // }
       },
       dataBuilder: (context, data) {
         return SizedBox(

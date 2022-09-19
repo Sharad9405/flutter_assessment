@@ -311,6 +311,7 @@ class SchedulePageView extends BasePageViewWidget<SchedulePageViewModel> {
         ],
       ),
     );
+
   }
 
   _openDatePicker(context){
