@@ -49,7 +49,7 @@ class ImageUtil {
         width: width,
         matchTextDirection: true,
         height: height,
-        fit: BoxFit.fill,
+        fit: BoxFit.contain,
         color: color,
         alignment: alignment,
         colorBlendMode: colorBlendMode,
@@ -59,15 +59,11 @@ class ImageUtil {
   }
 
   static Widget assetPng({required String name, double? width,
-      double? height, BoxFit? fit,Function()? onClick}){
-    return CupertinoButton(
-      onPressed: () => onClick?.call(),
-      padding: EdgeInsets.zero,
-      child: Image.asset(name,
-        width: width,
-        height: height,
-        fit: fit ?? BoxFit.cover,
-      ),
+      double? height, BoxFit? fit}){
+    return Image.asset(name,
+      width: width,
+      height: height,
+      fit: fit ?? BoxFit.cover,
     );
   }
 

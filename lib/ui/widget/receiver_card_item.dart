@@ -22,8 +22,9 @@ class ReceiverCardItem extends StatelessWidget {
       width: SystemTheme.scale(150),
       margin: EdgeInsets.only(right: SystemTheme.scale(10)),
       child: (bankCard.firstName != null)
-          ? InkWell(
-              onTap: () => onCardClick?.call(bankCard),
+          ? CupertinoButton(
+              onPressed: () => onCardClick?.call(bankCard),
+              padding: EdgeInsets.zero,
               child: Card(
                 color: bankCard.isSelected ? AppColor.enabledColor : AppColor.cardBg,
                 shape: RoundedRectangleBorder(
@@ -33,7 +34,6 @@ class ReceiverCardItem extends StatelessWidget {
                     width: SystemTheme.scale(150),
                   padding: EdgeInsets.symmetric(horizontal: SystemTheme.scale(12), vertical: SystemTheme.scale(5)),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       (bankCard.url != null && bankCard.url!.isNotEmpty)

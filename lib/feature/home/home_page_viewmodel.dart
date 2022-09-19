@@ -25,7 +25,7 @@ class HomePageViewModel extends BasePageViewModel {
   HomePageViewModel(){
 
     _generateOperationTypes();
-    _generateTransactions();
+
   }
 
 
@@ -58,24 +58,25 @@ class HomePageViewModel extends BasePageViewModel {
           isSelected: false,
         ));
         _operationType.safeAdd(list);
-
+        _generateTransactions();
     });
   }
 
   void _generateTransactions() {
+    List<Transaction> list = [];
+    list.add(Transaction(
+      name: 'Mike Rine',
+      time: '2 hours ago',
+      amount: '+\$250',
+    ));
+    list.add(Transaction(
+      name: 'Casey Smith',
+      time: '1 week ago',
+      amount: '+\$450',
+    ));
+    _transactionList.safeAdd(list);
     Future.delayed(const Duration(milliseconds: 250), () {
-      List<Transaction> list = [];
-      list.add(Transaction(
-        name: 'Mike Rine',
-        time: '2 hours ago',
-        amount: '+\$250',
-      ));
-      list.add(Transaction(
-        name: 'Casey Smith',
-        time: '1 week ago',
-        amount: '+\$450',
-      ));
-      _transactionList.safeAdd(list);
+
     });
   }
 

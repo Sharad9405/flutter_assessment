@@ -299,7 +299,7 @@ class SchedulePageView extends BasePageViewWidget<SchedulePageViewModel> {
           SwipeButton(
             key: model.sliderKey,
             text: "Swipe To Schedule",
-            height: 50,
+            height: SystemTheme.scale(50),
             width: UIUtils.width(context),
             textColor: AppColor.white,
             fontSize: 15, letterSpacing: 2,

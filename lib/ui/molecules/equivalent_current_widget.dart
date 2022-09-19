@@ -25,6 +25,7 @@ class CurrencyWidget extends StatelessWidget {
         AppText(
           title: text,
           fontSize: 11,
+          mLeft: SystemTheme.scale(5),
           font: FontEnum.GBold.toString(),
           textColor: AppColor.subColor,
         )

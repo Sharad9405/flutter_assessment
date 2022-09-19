@@ -82,9 +82,13 @@ class Header extends StatelessWidget with PreferredSizeWidget {
                   padding: EdgeInsets.only(right: SystemTheme.scale(pRight)),
                   child: Hero(
                     tag: 'logo',
-                    child: ImageUtil.assetPng(name: suffixIcon ?? AssetUtils.iconUserDefaultPng,
-                        height: SystemTheme.scale(suffixIconHeight), width: SystemTheme.scale(suffixIconWidth),
-                        onClick: () => onSuffixClick?.call()),
+                    child: CupertinoButton(
+                      onPressed: () => onSuffixClick?.call(),
+                      padding: EdgeInsets.zero,
+                      child: ImageUtil.assetPng(name: suffixIcon ?? AssetUtils.iconUserDefaultPng,
+                          height: SystemTheme.scale(suffixIconHeight), width: SystemTheme.scale(suffixIconWidth),
+                      ),
+                    ),
                   ),
                 ),
               ),

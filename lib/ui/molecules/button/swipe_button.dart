@@ -40,20 +40,23 @@ class SwipeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SlideAction(
-      key: sliderKey,
-      borderRadius: SystemTheme.scale(buttonBorderRadius ?? 12),
-      outerColor: buttonBackGroundColor ?? AppColor.enabledColor,
-      sliderRotate: false,
-      onSubmit: () {
-        onSubmit?.call();
-      },
-      child: AppText(title: '$text',
-        textColor: textColor,
-        fontSize: fontSize ?? 15,
-        fontWeight: fontWeight,
-        textAlign: textAlign ?? TextAlign.center,
-        letterSpacing: letterSpacing,
+    return SizedBox(
+      width: width, height: height,
+      child: SlideAction(
+        key: sliderKey,
+        borderRadius: SystemTheme.scale(buttonBorderRadius ?? 12),
+        outerColor: buttonBackGroundColor ?? AppColor.enabledColor,
+        sliderRotate: false,
+        onSubmit: () {
+          onSubmit?.call();
+        },
+        child: AppText(title: '$text',
+          textColor: textColor,
+          fontSize: fontSize ?? 15,
+          fontWeight: fontWeight,
+          textAlign: textAlign ?? TextAlign.center,
+          letterSpacing: letterSpacing,
+        ),
       ),
     );
   }
