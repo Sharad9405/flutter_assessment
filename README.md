@@ -15,8 +15,8 @@ A new Flutter project.
    i. flutter clean <br />
    ii. flutter pub get <br />
    ii. flutter pub run build_runner build <br />
-6. back ro root project level
-   i. flutter clean
+6. back ro root project level <br />
+   i. flutter clean <br />
    ii. flutter pub get
 7. run project   
 
