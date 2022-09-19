@@ -11,7 +11,7 @@ A new Flutter project.
 4. move terminal focus to domain package i.e. cd domain/ <br />
    i. flutter clean <br />
    ii. flutter pub get <br />
-5. move terminal focus to domain package i.e. cd data/ <br />
+5. move terminal focus to data package i.e. cd data/ <br />
    i. flutter clean <br />
    ii. flutter pub get <br />
    ii. flutter pub run build_runner build <br />
