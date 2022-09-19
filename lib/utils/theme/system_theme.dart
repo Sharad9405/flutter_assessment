@@ -60,7 +60,7 @@ class SystemTheme {
   static double statusBarHeight = statusBarHeight1;
 
   static double scale(double size) {
-    return (screenWidth / guidelineBaseWidth) * size;
+    return (screenWidth / guidelineBaseWidth) * (size * 1.2);
   }
 
   static double verticalScale(double size) {
