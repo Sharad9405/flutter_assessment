@@ -41,18 +41,16 @@ class TransactionListView extends StatelessWidget {
             ),
           ),
 
-          (transactionList?.length ?? 0) > 0
-          ? Expanded(
+          Expanded(
             child: ListView.builder(
-              primary: false,
+                primary: false,
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: transactionList?.length,
                 itemBuilder: (context, index){
                   return TransactionListItem(transaction: transactionList![index],);
                 }
             ),
-          ) : AppText(title: 'No data found', fontSize: 12, font: FontEnum.GRegular.toString(), textColor: AppColor.black,)
-
+          ),
         ],
       ),
     );
