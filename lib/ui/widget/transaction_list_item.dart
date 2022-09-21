@@ -13,7 +13,7 @@ class TransactionListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: SystemTheme.scale(15), vertical: SystemTheme.scale(00)),
+      padding: EdgeInsets.symmetric(horizontal: SystemTheme.scale(15),),
       margin: EdgeInsets.symmetric(vertical: SystemTheme.scale(8), horizontal: SystemTheme.scale(5)),
       decoration: BoxDecoration(
         boxShadow: const [

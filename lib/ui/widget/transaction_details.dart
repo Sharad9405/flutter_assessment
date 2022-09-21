@@ -29,7 +29,7 @@ class TransactionDetails extends StatelessWidget {
 
         Container(
           height: SystemTheme.scale(56),
-          padding: EdgeInsets.fromLTRB(SystemTheme.scale(15),SystemTheme.scale(5),SystemTheme.scale(5), SystemTheme.scale(5)),
+          padding: EdgeInsets.fromLTRB(SystemTheme.scale(15),SystemTheme.scale(5),SystemTheme.scale(20), SystemTheme.scale(5)),
           margin: EdgeInsets.only(top: SystemTheme.scale(12),),
           decoration: BoxDecoration(
             border: Border.all(width: SystemTheme.scale(1), color: AppColor.enabledColor,),
@@ -77,6 +77,7 @@ class TransactionDetails extends StatelessWidget {
                     fontSize: 18,
                     font: FontEnum.GRegular.toString(),
                     letterSpacing: 0.2,
+                    mLeft: SystemTheme.scale(7), mRight: SystemTheme.scale(10),
                     textColor: AppColor.color6E6E6E,
                   ),
 
@@ -195,7 +196,7 @@ class TransactionDetails extends StatelessWidget {
 
         Container(
           height: SystemTheme.scale(56),
-          padding: EdgeInsets.fromLTRB(SystemTheme.scale(15),SystemTheme.scale(5),SystemTheme.scale(5), SystemTheme.scale(5)),
+          padding: EdgeInsets.fromLTRB(SystemTheme.scale(15),SystemTheme.scale(5),SystemTheme.scale(20), SystemTheme.scale(5)),
           margin: EdgeInsets.only(top: SystemTheme.scale(0),),
           decoration: BoxDecoration(
             border: Border.all(width: SystemTheme.scale(1),color: AppColor.enabledColor,),
@@ -233,7 +234,7 @@ class TransactionDetails extends StatelessWidget {
 
               Row(
                 mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ImageUtil.assetSvg(assetName: AssetUtils.flagFive,
                     width: SystemTheme.scale(18),
@@ -243,6 +244,7 @@ class TransactionDetails extends StatelessWidget {
                     fontSize: 18,
                     font: FontEnum.GRegular.toString(),
                     letterSpacing: 0.2,
+                    mLeft: SystemTheme.scale(7), mRight: SystemTheme.scale(10),
                     textColor: AppColor.color6E6E6E,
                   ),
 
